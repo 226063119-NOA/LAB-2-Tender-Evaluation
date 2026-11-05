@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main()
+{
+    char supplierName[50];
+    float price;
+    float budget;
+    int registered;
+    int documentsComplete;
+
+    printf("=== TENDER EVALUATION ===\n");
+
+    printf("Enter Supplier Name: ");
+    scanf("%s", supplierName);
+
+    printf("Enter Tender Price: ");
+    scanf("%f", &price);
+
+    printf("Enter Available Budget: ");
+    scanf("%f", &budget);
+
+    printf("Is Supplier Registered? (1=Yes, 0=No): ");
+    scanf("%d", &registered);
+
+    printf("Are Documents Complete? (1=Yes, 0=No): ");
+    scanf("%d", &documentsComplete);
+
+    if (registered == 0 || documentsComplete == 0)
+    {
+        printf("\nSupplier: %s\n", supplierName);
+        printf("Status: Disqualified\n");
+    }
+    else if (price > budget)
+    {
+        printf("\nSupplier: %s\n", supplierName);
+        printf("Status: Disqualified\n");
+    }
+    else
+    {
+        printf("\nSupplier: %s\n", supplierName);
+        printf("Status: Qualified\n");
+    }
+
+    return 0;
+}
